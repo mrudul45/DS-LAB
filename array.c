@@ -4,6 +4,8 @@ int main()
     int ar[20],n,i,ch;
     void insert(int ar[],int n);
     void delete(int ar[],int n);
+    void display(int ar[],int n);
+    void search(int ar[],int n);
     printf("enter the size of array :");
     scanf(" %d",&n);
     printf("enter the array elements :");
@@ -17,9 +19,13 @@ int main()
     switch(ch)
     {
       case 1:insert(ar,n);
-          break;
+        break;
       case 2:delete(ar,n);
-          break;
+        break;
+      case 3:display(ar,n);
+        break;
+      case 4:search(ar,n);
+        break;
       default:
       printf("wrong choice");
   }
@@ -71,5 +77,39 @@ int main()
         printf(" %d",ar[i]);
     }
   }
+  void display(int ar[],int n)
+  {
+    int i;
+    printf("\n display array elements :");
+    for(i=0;i<n;i++)
+    {
+        printf(" %d\t",ar[i]);
+    }
+  }
+  void search(int ar[],int n)
+  {
+      int e,i,pos,flag=0;
+      printf("enter the element to be searched :");
+      scanf(" %d",&e);
+      for(i=0;i<n;i++)
+      {
+        if(e==ar[i])
+        { 
+            flag=1;
+            pos=i+1;
+            break;
+        }
+        
+      }
+      if(flag==1)
+      {
+          printf("element found at position : %d",pos);
+      }
+      else
+      {
+          printf("element not found!!");
+      }
+  }
+  
  
  
